@@ -1,9 +1,15 @@
-import { IsNotEmpty, IsNumber, IsPositive, IsString } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsNumber,
+  IsNumberString,
+  IsPositive,
+  IsString,
+} from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { User } from './user.entity';
 
 export class UserDto extends User {
-  @IsString()
+  @IsNumberString()
   @IsNotEmpty()
   @ApiProperty({ type: String })
   id: string;
